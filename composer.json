@@ -2,7 +2,7 @@
     "name": "flender/azure-openai",
     "description": "Azure OpenAI API",
     "type": "library",
-    "version": "0.0.1",
+    "version": "1.0.0",
     "license": "MIT",
     "authors": [
         {
