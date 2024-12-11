@@ -14,7 +14,8 @@
     ],
     "keywords": ["openai", "azure", "api"],
     "require":{
-        "php": ">=7.4"
+        "php": ">=7.4",
+        "lib-curl": "*"
     },
     "require-dev": {},
     "autoload": {
