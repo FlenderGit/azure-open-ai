@@ -1,5 +1,16 @@
 {
     "name": "flender/azure-openai",
+    "description": "Azure OpenAI API",
+    "type": "library",
+    "version": "0.0.1",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Flender",
+            "email": "tristan.deloeil@gmail.com"
+        }
+    ],
+    "keywords": ["openai", "azure", "api"],
     "autoload": {
         "psr-4": {
             "Flender\\OpenAI\\": "src/"
