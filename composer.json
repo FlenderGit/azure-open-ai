@@ -1,0 +1,9 @@
+{
+    "name": "flender/azure-openai",
+    "autoload": {
+        "psr-4": {
+            "Flender\\OpenAI\\": "src/"
+        }
+    },
+    "require": {}
+}
