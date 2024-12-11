@@ -14,7 +14,7 @@ class OpenAI
         $this->requestBuilder = new OpenAIRequestBuilder($credentials);
     }
 
-    public function new_thread(array $file_ids = [], array $messages = [], array $metadata): array
+    public function new_thread(array $file_ids = [], array $messages = [], array $metadata = []): array
     {
         $data = [
             'messages' => $messages,
