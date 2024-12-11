@@ -7,14 +7,19 @@
     "authors": [
         {
             "name": "Flender",
-            "email": "tristan.deloeil@gmail.com"
+            "email": "tristan.deloeil@gmail.com",
+            "homepage": "https://flendergit.github.io/",
+            "role": "Developer"
         }
     ],
     "keywords": ["openai", "azure", "api"],
+    "require":{
+        "php": ">=7.4"
+    },
+    "require-dev": {},
     "autoload": {
         "psr-4": {
             "Flender\\OpenAI\\": "src/"
         }
-    },
-    "require": {}
+    }
 }
