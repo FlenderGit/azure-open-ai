@@ -111,10 +111,14 @@ class OpenAI
      */
     private function safe_add_file(VerifiedFile $file): array
     {
-        return $this->requestBuilder->post_to_json("files", [
+        $response = $this->requestBuilder->post_to_json("files", [
             'file' => curl_file_create($file->path, $file->type, $file->name),
             'purpose' => 'assistants'
         ], false);
+        if (isset($response['error'])) {
+            throw new \Exception($response['error']['message']);
+        }
+        return $response;
     }
 
     public function delete_file(string $id): array
