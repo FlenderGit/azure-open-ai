@@ -156,7 +156,7 @@ class OpenAIRequestBuilder
         $output = curl_exec($ch);
 
         if (curl_errno($ch) || $output === false) {
-            throw new Exception("ERRNO ERROR: " . curl_error($ch));
+            throw new Exception(message: "ERRNO ERROR: " . curl_error($ch));
         }
 
         return $output;
@@ -192,16 +192,17 @@ class OpenAIRequestBuilder
     {
         $url = $this->get_url($route);
 
-        $message = "";
-        $write_function = function (string $event, string $data) use ($event_name, &$message) {
+        $out = [];
+        $write_function = function (string $event, string $data) use ($event_name, &$out) {
             if ($event === $event_name) {
-                $message = substr($data, 6);
+                $data = substr($data, 6);
+                $out[] = json_decode($data, true);
             }
         };
 
         $this->abs_stream($url, $data, $write_function);
 
-        return $message;
+        return $out;
     }
 
 }
