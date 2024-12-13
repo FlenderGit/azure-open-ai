@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace Flender\OpenAI;
 
@@ -18,8 +18,11 @@ class OpenAI
     {
         $data = [
             'messages' => $messages,
-            'metadata' => $metadata
         ];
+
+        if(!empty($meta)) {
+            $data['metadata'] = $meta;
+        }
 
         if ($file_ids) {
             $data['tool_resources']['code_interpreter']['file_ids'] = $file_ids;
@@ -89,7 +92,6 @@ class OpenAI
      * If you want to add multiple files, use add_files instead.
      * @throws \Exception if any of the files is invalid
      * @param array $file
-     * @return bool|string
      */
     public function upload_file(array $file)
     {
